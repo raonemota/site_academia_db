@@ -1,0 +1,53 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    
+    <title>Portfólio - BootCamp LaunchBase</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+        <div id="wrapper">
+            <h1>Cursos RocketSeat</h1>
+        </div>
+        
+        <section class="cursos">
+
+            {% for item in cursos.curso %}
+                <div class="curso" id="{{item.name}}">
+                <div class="curso__img">
+                    <img src="{{item.img}}" alt="Imagem do curso {{item.name}}">
+                </div>
+                <div class="curso__description">
+                    <p>{{item.description}}</p>
+                </div>
+                <div class="curso__info">
+                    <p>{{item.qntd_modules}} Módulos</p>
+                    <p class="curso__price">{{item.price}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            
+
+        </section>
+
+        <div class="modal-overlay">
+            <div class="modal">
+                <div class="modal__buttons">
+                    <a class="close-modal">
+                        <i class="material-icons">close</i>
+                    </a>
+                </div>
+
+                <div class="modal__content">
+                    <iframe src="" frameborder="0"></iframe>
+                </div>
+                
+            </div>
+        </div>
+
+        <script src="scripts.js"></script>
+
+{% endblock %}
