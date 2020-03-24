@@ -1,5 +1,5 @@
 module.exports = {
-    age: function(timestamp){
+    age(timestamp){
 
         const today = new Date()
         const birthDate = new Date(timestamp)
@@ -19,7 +19,7 @@ module.exports = {
     
     },
 
-    date: function(timestamp){
+    date(timestamp){
         const date = new Date(timestamp)
         const year = date.getUTCFullYear()
         const month = `0${date.getUTCMonth() + 1}`.slice(-2) 
@@ -27,12 +27,13 @@ module.exports = {
 
         return {
             iso: `${year}-${month}-${day}`,
-            birthDay: `${day}/${month}`
+            birthDay: `${day}/${month}`,
+            format: `${day}/${month}/${year}`
         }
 
     },
 
-    typeBlood: function(blood){
+    typeBlood(blood){
         switch (blood) {
             case 'A1':
                 return 'A+'

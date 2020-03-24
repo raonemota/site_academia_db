@@ -139,5 +139,19 @@
     </div>
 </div>
 
+<div class="item">
+    <div>Tipo Sanguíneo</div>
+    <div>
+        <select name="instructor">
+            {% for instructor in instructorOptions %}
+                <option value="instructor.id" {% if member.instructor_id == instructor.id %} Selected {% endif %} >
+                    {{ instructor.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+
 
 <button type="submit">Salvar</button>
